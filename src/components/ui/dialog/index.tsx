@@ -7,14 +7,17 @@ import {
   DialogTrigger,
 } from "./primitive";
 
-type DialogProps = {
+export interface BaseDialogProps {
   children?: React.ReactNode;
+  open?: boolean;
+  setOpen?: (open: boolean) => void;
+}
+
+interface DialogProps extends BaseDialogProps {
   title: string;
   description?: string;
   content: React.ReactNode;
-  open?: boolean;
-  setOpen?: (open: boolean) => void;
-};
+}
 export const Dialog = ({
   children,
   title,
