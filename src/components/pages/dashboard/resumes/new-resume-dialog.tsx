@@ -1,13 +1,15 @@
+"use client";
 import { Dialog, BaseDialogProps } from "@/components/ui/dialog";
 import { Controller, useForm } from "react-hook-form";
 
+type FormData = {
+  title: string;
+};
 export const NewResumeDialog = (props: BaseDialogProps) => {
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = () => {};
+  const { control, handleSubmit } = useForm();
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+  };
   return (
     <Dialog
       {...props}
